@@ -1,4 +1,4 @@
-package com.practice.p1;
+package com.practice.dataStrucures;
 
 public class LinkedListImpl<T> {
 private Node<T> head;

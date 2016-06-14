@@ -18,14 +18,41 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
+import com.practice.dataStrucures.LinkedListImpl;
 public class Practice {
-public static void main(String[] args) {
+public static void main(String[] args)throws Exception {
 	
 		//codtest();
 		//largestNumber();
 		//recursiontest();
 		// linkListtest();
-	duplicateNumber();
+	   	//duplicateNumber();
+	threadTest();
+}
+private static void threadTest() throws InterruptedException{
+	Runnable r =  new Runnable() {
+		public void run() {
+			for(int i=0;i<=5;i++){
+				Thread t = Thread.currentThread();
+				System.out.println(t.getName()+i);
+				try {
+					t.sleep(4000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	};
+
+	Thread t1 = new Thread(r,"abc");
+	Thread t2 = new Thread(r,"xyz");
+	//Thread.currentThread().join();//deadLock
+	t1.start();
+	t2.start();
+	t1.sleep(1000);
+	t2.interrupt();
 }
 private static void duplicateNumber() {
 	Scanner sc = new Scanner(System.in);

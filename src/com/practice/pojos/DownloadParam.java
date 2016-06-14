@@ -1,4 +1,4 @@
-package com.practice.p1;
+package com.practice.pojos;
 
 
 public class DownloadParam{
