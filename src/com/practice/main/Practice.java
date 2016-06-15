@@ -20,6 +20,9 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import com.practice.dataStrucures.LinkedListImpl;
+import com.practice.threads.Consumer;
+import com.practice.threads.Producer;
+import com.practice.threads.Resource;
 public class Practice {
 public static void main(String[] args)throws Exception {
 	
@@ -31,6 +34,7 @@ public static void main(String[] args)throws Exception {
 	threadTest();
 }
 private static void threadTest() throws InterruptedException{
+	producerConsumer();
 	Runnable r =  new Runnable() {
 		public void run() {
 			for(int i=0;i<=5;i++){
@@ -46,13 +50,18 @@ private static void threadTest() throws InterruptedException{
 		}
 	};
 
-	Thread t1 = new Thread(r,"abc");
+	/*Thread t1 = new Thread(r,"abc");
 	Thread t2 = new Thread(r,"xyz");
 	//Thread.currentThread().join();//deadLock
 	t1.start();
 	t2.start();
 	t1.sleep(1000);
-	t2.interrupt();
+	t2.interrupt();*/
+}
+private static void producerConsumer() {
+Resource r = new Resource();
+new Thread(new Producer(r)).start();
+new Thread(new Consumer(r)).start();
 }
 private static void duplicateNumber() {
 	Scanner sc = new Scanner(System.in);
