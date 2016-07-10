@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -20,18 +22,118 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import com.practice.dataStrucures.LinkedListImpl;
+import com.practice.pojos.DownloadParam;
+import com.practice.pojos.Parent;
 import com.practice.threads.Consumer;
 import com.practice.threads.Producer;
 import com.practice.threads.Resource;
 public class Practice {
 public static void main(String[] args)throws Exception {
-	
 		//codtest();
 		//largestNumber();
 		//recursiontest();
 		// linkListtest();
 	   	//duplicateNumber();
-	threadTest();
+	    //threadTest();
+		//midPoint();
+	//patternSerach();
+	//System.out.println(exceptionTest());
+//new Parent();
+	//hashmapTest();
+	new Patterns().draw();
+}
+
+	private static void hashmapTest() {
+		Map<DownloadParam,DownloadParam> map = new HashMap<DownloadParam,DownloadParam>();
+		DownloadParam d1= new DownloadParam("abc");
+		DownloadParam d2= new DownloadParam();
+		DownloadParam d3= new DownloadParam();
+		d1.setName("a");
+		d1.setid(1);
+		d2.setName("b");
+		d2.setid(2);
+		d3.setName("c");
+		d3.setid(3);
+		System.out.println(map.put(d1, d1));
+		System.out.println(map.put(d2, d2));
+		System.out.println(map.put(d3, d3));
+		System.out.println(map);
+		System.out.println(map.get(d1));
+		
+			
+}
+
+	private static int exceptionTest() {
+	String s1="abc";
+	String s2=s1;
+	s1+="d";
+	StringBuilder sb = new StringBuilder("abc");
+	StringBuilder sb1 = sb;
+	sb.append("d");
+	System.out.println(s1+""+s2+""+(s1==s2));
+	System.out.println(sb+""+sb1+""+(sb==sb1));
+	System.out.println("check1 "+sb.equals(sb1));
+	System.out.println("check2 "+sb1.equals(sb));
+	System.out.println("check3 "+sb1.toString().equals(sb));
+	System.out.println("check4 "+sb.toString().equals(sb1));
+	System.out.println("check3 "+sb==sb1.toString());
+	
+	return 0;
+}
+
+	private static void patternSerach() {
+		Scanner in = new Scanner(System.in);
+		int t = in.nextInt();
+		for (int a0 = 0; a0 < t; a0++) {
+			int R = in.nextInt();
+			int C = in.nextInt();
+			String G[] = new String[R];
+			for (int G_i = 0; G_i < R; G_i++) {
+				G[G_i] = in.next();
+			}
+			int r = in.nextInt();
+			int c = in.nextInt();
+			String P[] = new String[r];
+			for (int P_i = 0; P_i < r; P_i++) {
+				P[P_i] = in.next();
+			}
+		}
+
+	}
+private static void midPoint() {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter size of array");
+	int size = sc.nextInt();sc.nextLine();
+	int[] intArray = new  int[size];
+	while(size-->0){
+		intArray[size]=sc.nextInt();sc.nextLine();
+	}
+	int a=0,b=0,j=intArray.length-1,i=0;
+	
+	/*for(int j=intArray.length-1,i=0;i<intArray.length;i++,j--){
+		a+=intArray[i];
+		b+=intArray[j];
+		if(a==b){
+			System.out.println("mid point is :"+i+j);
+		}
+	}*/
+	// net solution 
+/*	while(true){
+		if(a>b){
+			b+=intArray[j--];
+		}else{
+			a+=intArray[i++];
+		}
+		if(i>j){
+			if(a==b){
+				break;
+			}else {
+                System.out.println("Please pass proper array to match the requirement");
+                break;
+            }
+		}
+	}
+	System.out.println(j);*/
 }
 private static void threadTest() throws InterruptedException{
 	producerConsumer();

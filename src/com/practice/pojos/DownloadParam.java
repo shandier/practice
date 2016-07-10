@@ -1,11 +1,21 @@
 package com.practice.pojos;
 
 
-public class DownloadParam{
+public class DownloadParam extends Parent{
 
 	/**
 	 * 
 	 */
+	
+	public DownloadParam(){
+		System.out.println("doenload default construst");
+		
+	}
+	public DownloadParam(String name){
+		System.out.println("doenload parametrized construst");
+		this.name=name;
+		
+	}
 	private static final long serialVersionUID = -3646835549013879457L;
 	private String name ;
 	/* (non-Javadoc)
@@ -21,10 +31,18 @@ public class DownloadParam{
 		return result;
 	}
 	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "DownloadParam [name=" + name + ", id=" + id + ", job=" + job + "]";
+	}
+	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
 	public boolean equals(Object obj) {
+		return true;/*
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -45,7 +63,7 @@ public class DownloadParam{
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
-	}
+	*/}
 	private int id;
 	private String job;
 	
