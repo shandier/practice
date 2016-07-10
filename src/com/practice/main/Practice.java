@@ -22,6 +22,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import com.practice.dataStrucures.LinkedListImpl;
+import com.practice.dataStrucures.StringAlgos;
 import com.practice.pojos.DownloadParam;
 import com.practice.pojos.Parent;
 import com.practice.threads.Consumer;
@@ -29,6 +30,8 @@ import com.practice.threads.Producer;
 import com.practice.threads.Resource;
 public class Practice {
 public static void main(String[] args)throws Exception {
+	StringAlgos strPractice = new StringAlgos();
+	System.out.println(strPractice.isUniqueChar("qwertyuioplkjhgfdsazxcvbnm,./';[]=-0987654321!@#$%^&*()_d"));
 		//codtest();
 		//largestNumber();
 		//recursiontest();
@@ -40,7 +43,7 @@ public static void main(String[] args)throws Exception {
 	//System.out.println(exceptionTest());
 //new Parent();
 	//hashmapTest();
-	new Patterns().draw();
+	//new Patterns().draw();
 }
 
 	private static void hashmapTest() {
