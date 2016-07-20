@@ -21,17 +21,16 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import com.practice.dataStrucures.IntegerAlgos;
 import com.practice.dataStrucures.LinkedListImpl;
-import com.practice.dataStrucures.StringAlgos;
 import com.practice.pojos.DownloadParam;
-import com.practice.pojos.Parent;
 import com.practice.threads.Consumer;
 import com.practice.threads.Producer;
 import com.practice.threads.Resource;
 public class Practice {
 public static void main(String[] args)throws Exception {
-	StringAlgos strPractice = new StringAlgos();
-	System.out.println(strPractice.repetedChars("gaurav sharma"));
+	IntegerAlgos strPractice = new IntegerAlgos();
+	strPractice.convertToBase(727, 5);
 		//codtest();
 		//largestNumber();
 		//recursiontest();
