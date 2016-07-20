@@ -30,7 +30,8 @@ import com.practice.threads.Resource;
 public class Practice {
 public static void main(String[] args)throws Exception {
 	IntegerAlgos strPractice = new IntegerAlgos();
-	strPractice.convertToBase(727, 5);
+	//strPractice.convertToBase(727, 5);
+	strPractice.closestNumber();
 		//codtest();
 		//largestNumber();
 		//recursiontest();
