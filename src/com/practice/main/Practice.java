@@ -31,7 +31,7 @@ import com.practice.threads.Resource;
 public class Practice {
 public static void main(String[] args)throws Exception {
 	StringAlgos strPractice = new StringAlgos();
-	System.out.println(strPractice.isUniqueChar("qwertyuioplkjhgfdsazxcvbnm,./';[]=-0987654321!@#$%^&*()_d"));
+	System.out.println(strPractice.repetedChars("gaurav sharma"));
 		//codtest();
 		//largestNumber();
 		//recursiontest();
